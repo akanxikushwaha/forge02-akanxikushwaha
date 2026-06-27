@@ -1,12 +1,243 @@
 {
-  "_comment": "OpenClaw (coder) -- EastRouter config. Secrets REDACTED on purpose.",
-  "model": { "base_url": "https://api.eastrouter.com/v1", "api_key": "${EASTROUTER_API_KEY}", "model": "z-ai/glm-5.1" },
+  "gateway": {
+    "auth": {
+      "mode": "token",
+      "token": "1aededb61ab17c8bd53d606d7e475420da41f938563dd806"
+    },
+    "mode": "local",
+    "port": 18789,
+    "bind": "loopback",
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "controlUi": {
+      "allowInsecureAuth": true
+    }
+  },
+  "wizard": {
+    "lastRunAt": "2026-06-27T06:54:56.176Z",
+    "lastRunVersion": "2026.6.9",
+    "lastRunCommand": "configure",
+    "lastRunMode": "local"
+  },
+  "meta": {
+    "lastTouchedVersion": "2026.6.9",
+    "lastTouchedAt": "2026-06-27T06:54:57.208Z"
+  },
+  "plugins": {
+    "entries": {
+      "slack": {
+        "enabled": true
+      },
+      "groq": {
+        "enabled": true
+      },
+      "google": {
+        "enabled": true
+      },
+      "anthropic": {
+        "enabled": true
+      }
+    }
+  },
+  "skills": {
+    "entries": {
+      "1password": {
+        "enabled": false
+      },
+      "blogwatcher": {
+        "enabled": false
+      },
+      "blucli": {
+        "enabled": false
+      },
+      "camsnap": {
+        "enabled": false
+      },
+      "clawhub": {
+        "enabled": false
+      },
+      "coding-agent": {
+        "enabled": false
+      },
+      "discord": {
+        "enabled": false
+      },
+      "eightctl": {
+        "enabled": false
+      },
+      "gh-issues": {
+        "enabled": false
+      },
+      "gifgrep": {
+        "enabled": false
+      },
+      "github": {
+        "enabled": true
+      },
+      "gog": {
+        "enabled": false
+      },
+      "goplaces": {
+        "enabled": false
+      },
+      "himalaya": {
+        "enabled": false
+      },
+      "mcporter": {
+        "enabled": false
+      },
+      "nano-pdf": {
+        "enabled": false
+      },
+      "obsidian": {
+        "enabled": false
+      },
+      "openai-whisper": {
+        "enabled": false
+      },
+      "openai-whisper-api": {
+        "enabled": false
+      },
+      "openhue": {
+        "enabled": false
+      },
+      "oracle": {
+        "enabled": false
+      },
+      "ordercli": {
+        "enabled": false
+      },
+      "sag": {
+        "enabled": false
+      },
+      "session-logs": {
+        "enabled": false
+      },
+      "sherpa-onnx-tts": {
+        "enabled": false
+      },
+      "songsee": {
+        "enabled": false
+      },
+      "sonoscli": {
+        "enabled": false
+      },
+      "spotify-player": {
+        "enabled": false
+      },
+      "summarize": {
+        "enabled": false
+      },
+      "trello": {
+        "enabled": false
+      },
+      "voice-call": {
+        "enabled": false
+      },
+      "wacli": {
+        "enabled": false
+      },
+      "xurl": {
+        "enabled": false
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "workspace": "C:\\Users\\Akanxi\\.openclaw\\workspace",
+      "models": {
+        "moonshotai/kimi-k2.6": {},
+        "eastrouter/moonshotai/kimi-k2.6": {}
+      },
+      "model": {
+        "primary": "eastrouter/moonshotai/kimi-k2.6",
+        "fallbacks": [
+          "groq/llama-3.1-8b-instant",
+          "google/gemini-2.5-flash"
+        ]
+      }
+    }
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "tools": {
+    "profile": "coding"
+  },
+  "auth": {
+    "profiles": {
+      "groq:default": {
+        "provider": "groq",
+        "mode": "api_key"
+      },
+      "google:default": {
+        "provider": "google",
+        "mode": "api_key"
+      },
+      "anthropic:default": {
+        "provider": "anthropic",
+        "mode": "api_key"
+      }
+    }
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "eastrouter": {
+        "baseUrl": "https://api.eastrouter.com/api/anthropic",
+        "api": "anthropic-messages",
+        "apiKey": {
+          "source": "env",
+          "provider": "default",
+          "id": "EASTROUTER_API_KEY"
+        },
+        "models": [
+          {
+            "id": "moonshotai/kimi-k2.6",
+            "name": "moonshotai/kimi-k2.6 (Custom Provider)",
+            "contextWindow": 128000,
+            "maxTokens": 4096,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "reasoning": false
+          }
+        ]
+      }
+    }
+  },
   "channels": {
     "slack": {
       "enabled": true,
-      "appToken": { "source": "env", "id": "SLACK_APP_TOKEN" },
-      "botToken": { "source": "env", "id": "SLACK_BOT_TOKEN" },
-      "channels": ["#agent-coder", "#agent-log", "#ci-cd"]
+      "groupPolicy": "allowlist",
+      "channels": {
+        "C0BDPGJ5M1S": {
+          "enabled": true
+        },
+        "C0BDPGJFKA8": {
+          "enabled": true
+        },
+        "C0BDGFH0WN9": {
+          "enabled": true
+        },
+        "C0BDDH1SGNP": {
+          "enabled": true
+        },
+        "C0BDHQHNDE2": {
+          "enabled": true
+        }
+      },
+      "capabilities": {
+        "interactiveReplies": true
+      }
     }
   }
 }
