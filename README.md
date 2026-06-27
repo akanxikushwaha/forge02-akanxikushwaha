@@ -1,4 +1,4 @@
-# PulseDesk -- Forge 2 / Edition 1  (rename this repo: forge2-<yourname>)
+# PulseDesk -- Forge 2 / Edition 1
 
 A multi-tenant support-desk SaaS, BUILT BY ORCHESTRATING Hermes + OpenClaw over Slack.
 This is a STARTER SKELETON -- structure only, zero features. Build the features with your agents.
@@ -7,8 +7,8 @@ This is a STARTER SKELETON -- structure only, zero features. Build the features 
 Laravel 11 . PHP 8.2 . MySQL 8 . Laravel Sanctum . React 19 . Vite . Tailwind
 
 ## EastRouter models I used
-- Hermes (planning / product owner): <e.g. deepseek/deepseek-v4-pro>
-- OpenClaw (coding): <e.g. z-ai/glm-5.1>
+- Hermes (planning / product owner): z-ai/glm-5.1
+- OpenClaw (coding): eastrouter/moonshotai/kimi-k2.6
 
 ## How to run  (EXACT -- a judge will run these from a fresh clone)
 ### Backend (Laravel + MySQL)
